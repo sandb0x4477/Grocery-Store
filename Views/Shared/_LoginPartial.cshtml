@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity.EntityFrameworkCore
+@using GroceryStore2.Models
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+@if (User.Identity.IsAuthenticated)
+{
+    <li>
+  <form  asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
+      <button class="uk-button uk-button-text" type="submit">Log out</button>
+  </form>
+    </li>
+
+}
+else
+{
+
+    <li>
+      <a class="uk-link-text" id="loginLink" asp-controller="Account" asp-action="Login">Log in</a>
+    </li>
+    <li>
+      <a class="uk-link-text" id="registerLink" asp-controller="Account" asp-action="Register">Register</a>
+    </li>
+
+}

@@ -1,0 +1,40 @@
+@model LoginViewModel
+
+<br>
+<div class="uk-flex uk-flex-center">
+
+<br>
+
+<form asp-controller="Account" asp-action="Register" method="post" role="form" class="uk-form-stacked">
+
+<div asp-validation-summary="All" class="uk-text-danger"></div>
+
+
+<h2 class="uk-legend">Please register..</h2>
+  <input type="hidden" asp-for="ReturnUrl" />
+
+    <label class="uk-form-label" for="email">Email</label>
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: mail"></span>
+            <input class="uk-input" type="text" id="email" asp-for="Email">
+        </div>
+    </div>
+
+    <label class="uk-form-label" for="password">Password</label>
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon uk-form-icon" uk-icon="icon: lock"></span>
+            <input class="uk-input" type="password" id="password" asp-for="Password">
+        </div>
+    </div>
+
+    <input type="submit" class="uk-button uk-button-default uk-width-1-1" value="Register" />
+
+        <button
+    asp-controller="Account" asp-action="Login"
+    class="uk-button uk-button-primary uk-width-1-1">Log in</button>
+
+</form>
+
+</div>

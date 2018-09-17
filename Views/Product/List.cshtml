@@ -1,0 +1,13 @@
+﻿@model ProductListViewModel
+
+@{ ViewBag.Title = "title"; Layout = "_Layout"; }
+
+<br>
+<div class="uk-container">
+<hr class="uk-divider-icon">
+    <div class="uk-child-width-1-3@m uk-grid-match uk-child-width-1-2@s" uk-grid>
+        @foreach (var product in Model.Products)
+        { @await Html.PartialAsync("ProductCard", product) }
+    </div>
+
+</div>

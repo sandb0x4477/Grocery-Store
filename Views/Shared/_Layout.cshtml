@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/css/uikit.min.css" />
+
+  <title>Grocery Store</title>
+</head>
+
+<body>
+  <div class="uk-offcanvas-content">
+    <!--HEADER-->
+    <header>
+      <div class="uk-container">
+        <nav class="uk-navbar-transparent" data-uk-navbar>
+          <div class="uk-navbar-left">
+            <a class="uk-navbar-item uk-logo" asp-area="" asp-controller="Home" asp-action="Index">
+              <img src="~/img/logo.jpg" alt="logo">
+            </a>
+          </div>
+          <div class="uk-navbar-center uk-visible@s">
+            <ul class="uk-navbar-nav">
+              <li>
+                <a href="#">Products
+                  <span data-uk-icon="icon: triangle-down"></span>
+                </a>
+                <div class="uk-navbar-dropdown">
+                  <ul class="uk-nav uk-navbar-dropdown-nav">
+                    <li>
+                      <a asp-controller="Product" asp-action="List" asp-route-category="Fruits">Fruits</a>
+                    </li>
+                    <li>
+                      <a asp-controller="Product" asp-action="List" asp-route-category="Vegetables">Vegetables</a>
+                    </li>
+                    <li>
+                      <a asp-controller="Product" asp-action="List" asp-route-category="Drinks">Drinks</a>
+                    </li>
+                    <li>
+                      <a asp-controller="Product" asp-action="List" asp-route-category="">All</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a asp-controller="Contact"
+                asp-action="Index"
+                   >Contact</a>
+              </li>
+
+              <li>
+                @await Component.InvokeAsync("ShoppingCartSummary")
+              </li>
+
+            </ul>
+          </div>
+
+
+          <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+              <li>
+                <a href="#" data-uk-icon="icon:user"></a>
+                <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left">
+                  <ul class="uk-nav uk-navbar-dropdown-nav">
+                    <li class="uk-nav-header uk-text-small uk-text-primary">YOUR ACCOUNT</li>
+                    <partial name="_LoginPartial" />
+                    <!-- <li>
+                      <a href="#">
+                        <span data-uk-icon="icon: info"></span> Summary</a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span data-uk-icon="icon: refresh"></span> Edit</a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span data-uk-icon="icon: settings"></span> Configuration</a>
+                    </li>
+                    <li class="uk-nav-divider"></li>
+                    <li>
+                      <a href="#">
+                        <span data-uk-icon="icon: image"></span> Your Pictures</a>
+                    </li>
+                    <li class="uk-nav-divider"></li>
+                    <li>
+                      <a href="#">
+                        <span data-uk-icon="icon: sign-out"></span> Logout</a>
+                    </li> -->
+                  </ul>
+                </div>
+              </li>
+
+              <li class="uk-hidden@s">
+                <a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a>
+              </li>
+
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!--/HEADER-->
+<!-- <partial name="_CookieConsentPartial" /> -->
+
+    @RenderBody()
+
+<hr class="uk-divider-icon">
+    <!--FOOTER-->
+    <footer class="uk-section uk-section-muted uk-section-small uk-padding-small">
+      <div class="uk-container">
+        <p class="uk-text-small uk-text-center">Copyright 2018 - Grocery Store.</p>
+      </div>
+    </footer>
+    <!--/FOOTER-->
+
+    <!-- OFFCANVAS -->
+    <div id="offcanvas-nav" uk-offcanvas="flip: true; overlay: true; mode: push">
+      <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
+        <button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
+        <ul class="uk-nav uk-nav-default">
+          <li class="uk-active">
+            <a href="#">Active</a>
+          </li>
+          <li class="uk-parent">
+            <a href="#">Parent</a>
+            <ul class="uk-nav-sub">
+              <li>
+                <a href="#">Sub item</a>
+              </li>
+              <li>
+                <a href="#">Sub item</a>
+              </li>
+            </ul>
+          </li>
+          <li class="uk-nav-header">Header</li>
+          <li>
+            <a href="#js-options">
+              <span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a>
+          </li>
+          <li class="uk-nav-divider"></li>
+          <li>
+            <a href="#">
+              <span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+    <!-- /OFFCANVAS -->
+
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit-icons.min.js"></script></div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

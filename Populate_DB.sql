@@ -1,0 +1,16 @@
+INSERT INTO public."Categories" ("CategoryId", "CategoryName") VALUES (1, 'Fruits');
+INSERT INTO public."Categories" ("CategoryId", "CategoryName") VALUES (2, 'Vegetables');
+INSERT INTO public."Categories" ("CategoryId", "CategoryName") VALUES (3, 'Drinks');
+
+-- ========================================================
+
+INSERT INTO public."Products" ("ProductId", "Name", "Description", "Price", "ImageUrl", "IsFeatured", "CategoryId") VALUES (7, 'Cabbage', 'Cabbage or headed cabbage is a leafy green, red, or white biennial plant grown as an annual vegetable crop for its dense-leaved heads', 7.99, '~/img/vegetables/cabbage.jpg', false, 2);
+INSERT INTO public."Products" ("ProductId", "Name", "Description", "Price", "ImageUrl", "IsFeatured", "CategoryId") VALUES (3, 'Beetroot', 'The beetroot is the taproot portion of the beet plant, usually known in North America as the beet, also table beet, garden beet, red beet, or golden beet.', 10.99, '~/img/fruits/beetroot.jpg', true, 2);
+INSERT INTO public."Products" ("ProductId", "Name", "Description", "Price", "ImageUrl", "IsFeatured", "CategoryId") VALUES (2, 'Bananas', 'A banana is an edible fruit â€“ botanically a berry â€“ produced by several kinds of large herbaceous flowering plants in the genus Musa.', 9.99, '~/img/fruits/bananas.jpg', true, 1);
+INSERT INTO public."Products" ("ProductId", "Name", "Description", "Price", "ImageUrl", "IsFeatured", "CategoryId") VALUES (1, 'Green Apples', 'An apple is a sweet, edible fruit produced by an apple tree. Apple trees are cultivated worldwide, and are the most widely grown species in the genus Malus.', 10.58, '~/img/fruits/green_apples.jpg', false, 1);
+INSERT INTO public."Products" ("ProductId", "Name", "Description", "Price", "ImageUrl", "IsFeatured", "CategoryId") VALUES (6, 'Orange Juice', 'Orange juice is the liquid extract of the orange tree fruit, produced by squeezing oranges.', 8.99, '~/img/drinks/orange_juice.jpg', true, 3);
+INSERT INTO public."Products" ("ProductId", "Name", "Description", "Price", "ImageUrl", "IsFeatured", "CategoryId") VALUES (8, 'Bell Pepper', 'The bell pepper is a cultivar group of the species Capsicum annuum. Cultivars of the plant produce fruits in different colours', 12.99, '~/img/fruits/peppers.jpg', false, 1);
+INSERT INTO public."Products" ("ProductId", "Name", "Description", "Price", "ImageUrl", "IsFeatured", "CategoryId") VALUES (9, 'Tangernines', 'The tangerine is a group of orange-colored citrus fruit consisting of hybrids of mandarin orange. The name was first used for fruit coming from Tangier, Morocco, described as a mandarin variety.', 9.99, '~/img/fruits/tangerines.jpg', false, 1);
+-- ================================================
+
+INSERT INTO public."AspNetUsers" ("Id", "UserName", "NormalizedUserName", "Email", "NormalizedEmail", "EmailConfirmed", "PasswordHash", "SecurityStamp", "ConcurrencyStamp", "PhoneNumber", "PhoneNumberConfirmed", "TwoFactorEnabled", "LockoutEnd", "LockoutEnabled", "AccessFailedCount") VALUES ('4a52adc3-7af5-47dc-ab3c-1f9c7024731e', 'test@test.com', 'TEST@TEST.COM', null, null, false, 'AQAAAAEAACcQAAAAEIrMAXmptvVclEr/Rht7pbOCl38bVaLn7WsWhR3AKgdebN+/JEhafxZ5jbpBXFW3zQ==', 'MYLJEGVDVXASIIH5PSK5JMWJDW33PLPD', '213dba92-a762-4d98-991b-2e3257468086', null, false, false, null, true, 0);

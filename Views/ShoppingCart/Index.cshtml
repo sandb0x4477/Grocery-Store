@@ -1,0 +1,54 @@
+@model ShoppingCartViewModel
+
+<br>
+<div class="uk-container">
+<hr class="uk-divider-icon">
+<h3 class="uk-text-center">Your Shopping Cart with our healty produce</h3>
+
+<!-- TABLE -->
+  <div class="uk-overflow-auto">
+    <table class="uk-table uk-table-striped uk-table-small">
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>Product</th>
+          <th class="uk-text-right">Price</th>
+          <th class="uk-text-right">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+    @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+    {
+        <tr>
+          <td>@line.Amount</td>
+          <td>@line.Product.Name</td>
+          <td class="uk-text-right">@line.Product.Price.ToString("c")</td>
+          <td class="uk-text-right">@((line.Amount * line.Product.Price).ToString("c"))</td>
+        </tr>
+    }
+
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="uk-text-right uk-text-primary">Total: </td>
+        <td class="uk-text-right uk-text-primary">@Model.ShoppingCartTotal.ToString("c")</td>
+      </tr>
+    </tfoot>
+
+      </tbody>
+    </table>
+
+  </div>
+  <!-- TABLE -->
+
+  <br>
+  <br>
+
+  <a class="uk-button uk-button-danger"
+    asp-controller="ShoppingCart" asp-action="ClearShoppingCart">Clear</a>
+
+  <a class="uk-button uk-button-primary uk-float-right"
+    asp-controller="Order" asp-action="Checkout">Check out</a>
+
+</div>

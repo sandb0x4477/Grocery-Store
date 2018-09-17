@@ -1,0 +1,100 @@
+@model Order
+
+<br/>
+<div class="uk-container uk-align-center">
+
+
+  <form asp-action="Checkout" method="post" role="form" class="uk-form-width-large uk-align-center">
+
+    <!-- <div asp-validation-summary="All" class="uk-text-danger"></div> -->
+
+    <h2 class="uk-text-center">Please fill the form to complete the order</h2>
+
+    <div class="uk-margin">
+      <fieldset class="uk-fieldset">
+        <label class="uk-form-label" asp-for="Name"></label>
+
+        <div class="uk-form-controls">
+          <input class="uk-input" asp-for="Name"/>
+          <span asp-validation-for="Name" class="uk-text-danger"></span>
+        </div>
+
+      </fieldset>
+    </div>
+
+
+    <div class="uk-margin">
+      <fieldset class="uk-fieldset">
+        <label class="uk-form-label" asp-for="Email"></label>
+
+        <div class="uk-form-controls">
+          <input class="uk-input" asp-for="Email"/>
+          <span asp-validation-for="Email" class="uk-text-danger"></span>
+        </div>
+
+      </fieldset>
+    </div>
+
+
+    <div class="uk-margin">
+      <fieldset class="uk-fieldset">
+        <label class="uk-form-label" asp-for="AddressLine1"></label>
+
+        <div class="uk-form-controls">
+          <input class="uk-input" asp-for="AddressLine1"/>
+          <span asp-validation-for="AddressLine1" class="uk-text-danger"></span>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="uk-margin">
+      <fieldset class="uk-fieldset">
+        <label class="uk-form-label" asp-for="City"></label>
+
+        <div class="uk-form-controls">
+          <input class="uk-input" asp-for="City"/>
+          <span asp-validation-for="City" class="uk-text-danger"></span>
+        </div>
+
+      </fieldset>
+    </div>
+
+    <div class="uk-margin">
+      <fieldset class="uk-fieldset">
+        <label class="uk-form-label" asp-for="ZipCode"></label>
+
+        <div class="uk-form-controls">
+          <input class="uk-input" asp-for="ZipCode"/>
+          <span asp-validation-for="ZipCode" class="uk-text-danger"></span>
+        </div>
+
+      </fieldset>
+    </div>
+
+
+    <div class="uk-margin">
+      <fieldset class="uk-fieldset">
+        <label class="uk-form-label" asp-for="PhoneNumber"></label>
+
+        <div class="uk-form-controls">
+          <input class="uk-input" asp-for="PhoneNumber"/>
+          <span asp-validation-for="PhoneNumber" class="uk-text-danger"></span>
+        </div>
+
+      </fieldset>
+    </div>
+
+    <div class="uk-margin">
+      <fieldset class="uk-fieldset">
+
+        <div class="uk-form-controls">
+          <input type="submit" value="Complete Order" class="uk-button uk-button-default"/>
+        </div>
+
+      </fieldset>
+    </div>
+
+
+  </form>
+
+</div>

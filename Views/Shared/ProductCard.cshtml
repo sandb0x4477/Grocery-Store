@@ -1,0 +1,34 @@
+@model Product
+
+<div>
+  <div class="uk-card uk-card-default uk-card-hover uk-card-small">
+    <div class="uk-card-media-top">
+      <img src="@Url.Content(Model.ImageUrl)" alt="@Model.Name">
+    </div>
+    <div class="uk-card-body">
+      <h3 class="uk-card-title">@Model.Name</h3>
+      <h5>@Model.Description</h5>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+    <div class="uk-card-footer uk-position-bottom">
+      <div class="uk-flex uk-flex-right ">
+        <div>
+          <a class="uk-button uk-button-default"
+             asp-controller="ShoppingCart"
+             asp-action="AddToShoppingCart"
+             asp-route-productId="@Model.ProductId">
+            Add to Cart
+          </a>
+        </div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <div>
+          <h3 class="uk-text-right">@Model.Price.ToString("C")</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

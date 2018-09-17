@@ -1,0 +1,24 @@
+ @model HomeViewModel
+
+<div class="uk-section-small uk-section-default uk-padding-small">
+
+    <div class="uk-container">
+        <h3 class="uk-text-center">
+            <span class="uk-text-background uk-text-center">Featured Products</span>
+        </h3>
+    </div>
+</div>
+<!-- <hr> -->
+
+<!-- featured -->
+<div class="uk-container">
+
+    <div class="uk-child-width-1-3@m uk-grid-match uk-child-width-1-2@s" uk-grid>
+      @foreach (var product in Model.FeaturedProducts)
+        {
+            @await Html.PartialAsync("ProductCard", product)
+        }
+    </div>
+
+</div>
+    <!-- /featured -->
