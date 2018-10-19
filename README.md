@@ -1,6 +1,6 @@
 # Grocery Store in ASP.Net Core 2.1 MVC
 
-[Live Demo](https://wbinkowski.site/gs/)
+[Live Demo](https://www.wbinkowski.site/gs/)
 
 `username: test@test.com; password: Pass123@`
 
